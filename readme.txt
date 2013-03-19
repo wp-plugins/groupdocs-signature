@@ -32,13 +32,10 @@ Upload the documents to your GroupDocs account. Use the GroupDocs Signature butt
 
 == Frequently Asked Questions ==
 
-= How can I get detailed help =
-For further help you may choose any of following options:
 
-= [How to Create a Signature Form?](http://groupdocs.com/docs/pages/viewpage.action?pageId=1900670) =
+[How to Create a Signature Form?](http://groupdocs.com/docs/pages/viewpage.action?pageId=1900670)
 
-
-= [How to Get a Signature Form ID?](http://groupdocs.com/docs/pages/viewpage.action?pageId=1900672) =
+[How to Get a Signature Form ID?](http://groupdocs.com/docs/pages/viewpage.action?pageId=1900672)
 
 
 
