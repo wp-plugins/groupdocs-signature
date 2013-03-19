@@ -26,9 +26,6 @@ GroupDocs Signature gives you a greener, paperless office.
 2. Activate the plugin through the `Plugins` menu in WordPress.
 3. Done.
 
-Upload the documents to your GroupDocs account. Use the GroupDocs Signature button in the Visual editor to build the appropriate shortcode by copy&pasting the document groupdocs.com link.
-
-
 
 == Frequently Asked Questions ==
 
