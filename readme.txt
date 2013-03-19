@@ -8,11 +8,9 @@ Stable tag: trunk
 License: GPLv2
 
 
-
-== Description ==
 Collect signatures online by embedding documents into your pages as digital forms. Once a form is embedded, signers apply an electronic signature, directly online.
 
-= GroupDocs Signature =
+== Description ==
 
 GroupDocs Signature is an efficient digital signature service that is completely web-based. GroupDocs' easy-to-use electronic signature service lets you collect digital signatures without the administrative overhead of printing, envelope stuffing and posting. It saves time and effort.
 
