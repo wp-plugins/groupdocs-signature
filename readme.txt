@@ -1,6 +1,6 @@
 === GroupDocs Signature ===
 Contributors: GroupDocs Team
-Tags: contract management software
+Tags: contract management software, groupdocs, widget, image
 Author URI: http://groupdocs.com
 Requires at least: 2.8
 Tested up to: 3.4.1
