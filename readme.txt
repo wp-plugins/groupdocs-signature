@@ -44,3 +44,5 @@ GroupDocs Signature gives you a greener, paperless office.
 
 = 1.0 =
 * Initial release.
+
+
