@@ -25,7 +25,7 @@ function grpdocs_signature_getdocument($atts) {
 
 	$guid = grpdocs_signature_getGuid(urlencode($form));
 
-	$code = '<iframe src="https://apps.groupdocs.com/signature/forms/SignEmbed/'. $guid .'?referer=wordpress/1.0" frameborder="0" width="'. $width .'" height="'. $height .'"></iframe>';
+	$code = '<iframe src="https://apps.groupdocs.com/signature2/forms/SignEmbed/'. $guid .'?referer=wordpress/1.0" frameborder="0" width="'. $width .'" height="'. $height .'"></iframe>';
 
 	$code = str_replace("%W%", $width, $code);
 	$code = str_replace("%H%", $height, $code);
