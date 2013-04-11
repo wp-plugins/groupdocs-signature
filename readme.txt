@@ -9,6 +9,7 @@ Stable tag: trunk
 License: GPLv2
 
 
+
 Collect signatures online by embedding documents into your pages as digital forms. Once a form is embedded, signers apply an electronic signature, directly online.
 
 
