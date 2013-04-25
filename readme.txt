@@ -1,4 +1,3 @@
-
 === GroupDocs Signature ===
 Contributors: GroupDocs Team
 Tags: contract management software, groupdocs, widget, image, sign, signature
