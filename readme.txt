@@ -43,5 +43,8 @@ GroupDocs Signature gives you a greener, paperless office.
 
 == Changelog ==
 
+= 1.0.1 =
+* Fix no iframe bug
+
 = 1.0 =
 * Initial release.
