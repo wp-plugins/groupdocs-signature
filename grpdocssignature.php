@@ -26,7 +26,7 @@ function grpdocs_signature_getdocument($atts) {
 	$guid = grpdocs_signature_getGuid(urlencode($form));
 
 	$if_no_iframe = 'If you can see this text, your browser does not support iframes. Please enable iframe support in your browser or use the latest version of any popular web browsers such as Mozilla Firefox or Google Chrome. <br/>Check out more details about GroupDocs <a href="http://groupdocs.com/apps/signature">online signature</a> service to see what it can do for you!';
-	$code = '<iframe src="https://apps.groupdocs.com/signature2/forms/SignEmbed/'. $guid .'?referer=wordpress/1.0" frameborder="0" width="'. $width .'" height="'. $height .'">' . $if_no_iframe . '</iframe>';
+	$code = '<iframe src="https://apps.groupdocs.com/signature2/forms/SignEmbed/'. $guid .'?referer=wordpress/1.0.1" frameborder="0" width="'. $width .'" height="'. $height .'">' . $if_no_iframe . '</iframe>';
 
 	$code = str_replace("%W%", $width, $code);
 	$code = str_replace("%H%", $height, $code);
