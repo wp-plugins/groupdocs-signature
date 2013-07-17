@@ -1,4 +1,3 @@
-
 === GroupDocs Online Signature Plugin ===
 Contributors: GroupDocs Team
 Tags: groupdocs, online signature, collect signatures online, sign documents online, sign contracts online, apply signature online, e-signature, electronic signature, sign, signature
