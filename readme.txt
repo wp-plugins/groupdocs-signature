@@ -1,6 +1,7 @@
+
 === GroupDocs Online Signature Plugin ===
 Contributors: GroupDocs Team
-Tags: groupdocs, groupdocs signature, online signature, collect signatures online, sign documents online, sign contracts online, apply signature online, e-signature, electronic signature, sign, signature
+Tags: groupdocs, online signature, collect signatures online, sign documents online, sign contracts online, apply signature online, e-signature, electronic signature, sign, signature
 Author URI: http://groupdocs.com/apps/signature
 Requires at least: 2.8
 Tested up to: 3.4.1
@@ -26,7 +27,7 @@ All documents signed with the GroupDocs' online signature service are absolutely
 3. Upload a document you want to get signed to your GroupDocs account. DOC, DOCX and PDF formats are supported.
 4. Add fields the signer should fill in before signing the document (if any). This could be: Name, Date, Sales Quote, etc.
 5. Specify area where the signer should drop his signature.
-6. Embed the document into one of your WordPress' web-pages (we will provide you with detailed instructions on how to do this, once you register at GroupDocs).
+6. Embed the document into one of your WordPress' web-pages (we will provide you with detailed instructions on how to this, once you register at GroupDocs).
 7. Provide the signer with a link to the document (a page on your website, where you embedded the document). 
 8. The signer can now complete the document by filling out the form fields (if any) and applying his online signature, either by uploading a scanned copy of his handwritten signature, or by drawing it directly in a web-browser. 
 9. Once the document is signed, GroupDocs automatically saves it in your account.   
@@ -58,3 +59,17 @@ Please [contact us](http://groupdocs.com/about/contact/) for more help.
 
 = 1.0 =
 * Initial release.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
