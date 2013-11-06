@@ -40,47 +40,6 @@ class AsyncApi {
 	}
 
   /**
-	 * GetJob
-	 * Get job
-   * userId, string: User GUID (required)
-   * jobId, string: Job Id or Guid (required)
-   * @return GetJobResponse
-	 */
-
-   public function GetJob($userId, $jobId) {
-      if( $userId === null || $jobId === null ) {
-        throw new ApiException("missing required parameters", 400);
-      }
-      //parse inputs
-  	  $resourcePath = str_replace("*", "", "/async/{userId}/jobs/{jobId}?format=xml");
-  	  $resourcePath = str_replace("{format}", "json", $resourcePath);
-  	  $method = "GET";
-      $queryParams = array();
-      $headerParams = array();
-
-      if($userId !== null) {
-  			$resourcePath = str_replace("{" . "userId" . "}",
-  			                            $userId, $resourcePath);
-  		}
-  		if($jobId !== null) {
-  			$resourcePath = str_replace("{" . "jobId" . "}",
-  			                            $jobId, $resourcePath);
-  		}
-  		//make the API Call
-      if (! isset($body)) {
-        $body = null;
-      }
-      $response = $this->apiClient->callAPI($this->basePath, $resourcePath, $method,
-  		                                      $queryParams, $body, $headerParams);
-      if(! $response){
-        return null;
-      }
-
-  	  $responseObject = $this->apiClient->deserialize($response,
-  		                                                'GetJobResponse');
-  	  return $responseObject;
-      }
-  /**
 	 * GetJobJson
 	 * Get job json
    * userId, string: User GUID (required)
@@ -93,7 +52,7 @@ class AsyncApi {
         throw new ApiException("missing required parameters", 400);
       }
       //parse inputs
-  	  $resourcePath = str_replace("*", "", "/async/{userId}/jobs/{jobId}?format=json");
+  	  $resourcePath = str_replace("*", "", "/async/{userId}/jobs/{jobId}");
   	  $resourcePath = str_replace("{format}", "json", $resourcePath);
   	  $method = "GET";
       $queryParams = array();

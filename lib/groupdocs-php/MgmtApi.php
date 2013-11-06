@@ -113,6 +113,42 @@ class MgmtApi {
   	  return $responseObject;
       }
   /**
+	 * Revoke
+	 * Revoke private key
+   * userId, string: User GUID (required)
+   * @return RevokeResponse
+	 */
+
+   public function Revoke($userId) {
+      if( $userId === null ) {
+        throw new ApiException("missing required parameters", 400);
+      }
+      //parse inputs
+  	  $resourcePath = str_replace("*", "", "/mgmt/{userId}/revoke");
+  	  $resourcePath = str_replace("{format}", "json", $resourcePath);
+  	  $method = "PUT";
+      $queryParams = array();
+      $headerParams = array();
+
+      if($userId !== null) {
+  			$resourcePath = str_replace("{" . "userId" . "}",
+  			                            $userId, $resourcePath);
+  		}
+  		//make the API Call
+      if (! isset($body)) {
+        $body = null;
+      }
+      $response = $this->apiClient->callAPI($this->basePath, $resourcePath, $method,
+  		                                      $queryParams, $body, $headerParams);
+      if(! $response){
+        return null;
+      }
+
+  	  $responseObject = $this->apiClient->deserialize($response,
+  		                                                'RevokeResponse');
+  	  return $responseObject;
+      }
+  /**
 	 * ChangeUserPassword
 	 * Change user password
    * userId, string: User GUID (required)
