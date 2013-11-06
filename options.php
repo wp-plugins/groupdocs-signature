@@ -6,15 +6,15 @@
     }
 
     	// Get GroupDocs plug-in options from database.
-    $userId     = get_option('userId');
-    $privateKey = get_option('privateKey');
+    $userId     = get_option('signature_userId');
+    $privateKey = get_option('signature_privateKey');
 if (isset ($_POST['login']) && ($_POST['password'])) {
     $login = trim($_POST['login']);
     $password = trim($_POST['password']);
-    include_once(dirname(__FILE__) . '/tree_viewer/lib/groupdocs-php/APIClient.php');
-    include_once(dirname(__FILE__) . '/tree_viewer/lib/groupdocs-php/StorageApi.php');
-    include_once(dirname(__FILE__) . '/tree_viewer/lib/groupdocs-php/GroupDocsRequestSigner.php');
-    include_once(dirname(__FILE__) . '/tree_viewer/lib/groupdocs-php/FileStream.php');
+    include_once(dirname(__FILE__) . '/lib/groupdocs-php/APIClient.php');
+    include_once(dirname(__FILE__) . '/lib/groupdocs-php/StorageApi.php');
+    include_once(dirname(__FILE__) . '/lib/groupdocs-php/GroupDocsRequestSigner.php');
+    include_once(dirname(__FILE__) . '/lib/groupdocs-php/FileStream.php');
     if ($basePath == "") {
         //If base base is empty seting base path to prod server
         $basePath = 'https://api.groupdocs.com/v2.0';
@@ -51,8 +51,8 @@ if (isset ($_POST['login']) && ($_POST['password'])) {
 		$userId     = trim($_POST['userId']);
 		$privateKey = trim($_POST['privateKey']);
 
-		update_option( 'userId', $userId);
-		update_option( 'privateKey', $privateKey);
+		update_option( 'signature_userId', $userId);
+		update_option( 'signature_privateKey', $privateKey);
 
         // Display an 'updated' message.
 		?>

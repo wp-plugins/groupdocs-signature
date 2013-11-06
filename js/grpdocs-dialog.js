@@ -1,3 +1,14 @@
+(function($) {
+    $(function() {
+
+        $('ul.tabs').delegate('li:not(.current)', 'click', function() {
+            $(this).addClass('current').siblings().removeClass('current')
+                .parents('div.section').find('div.box').eq($(this).index()).fadeIn(150).siblings('div.box').hide();
+        })
+
+    })
+})(jQuery)
+
 tinyMCEPopup.requireLangPack();
 	
 var GrpdocsInsertDialog = {
@@ -17,7 +28,7 @@ var GrpdocsInsertDialog = {
 					} else {					
 						jQuery('.opt').attr('disabled', 'disabled');
 						jQuery('.gray').css('color','gray');
-						jQuery('#shortcode').val('[grpdocssignature file=""]');
+						jQuery('#shortcode').val('[grpdocssignature form=""]');
 					}
 				
 				});
@@ -70,10 +81,7 @@ var GrpdocsInsertDialog = {
         if(jQuery('#file').val()) {
             jQuery('#form').submit();
         } else {
-            // insert the contents from the input into the document
-            tinyMCEPopup.editor.execCommand('mceInsertContent', false, jQuery('#shortcode').val());
-            tinyMCEPopup.close();
-        
+            jQuery('#form').submit();
         }
 	}
 };
