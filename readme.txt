@@ -51,8 +51,9 @@ For more details, please visit our website:
 
 Please [contact us](http://groupdocs.com/about/contact/) for more help.
 
-
 == Changelog ==
+= 1.2.0 =
+* Add new functions in plugin
 
 = 1.0.1 =
 * Fix no iframe bug
