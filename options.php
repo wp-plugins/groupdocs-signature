@@ -9,8 +9,8 @@
     $userId     = get_option('signature_userId');
     $privateKey = get_option('signature_privateKey');
 if (isset ($_POST['login']) && ($_POST['password'])) {
-    $login = trim($_POST['login']);
-    $password = trim($_POST['password']);
+    $login = strip_tags(trim($_POST['login']));
+    $password = strip_tags(trim($_POST['password']));
     include_once(dirname(__FILE__) . '/lib/groupdocs-php/APIClient.php');
     include_once(dirname(__FILE__) . '/lib/groupdocs-php/StorageApi.php');
     include_once(dirname(__FILE__) . '/lib/groupdocs-php/GroupDocsRequestSigner.php');
@@ -48,8 +48,8 @@ if (isset ($_POST['login']) && ($_POST['password'])) {
     //  If data was posted to the page...
     if( isset($_POST['grpdocs_signature_submit_hidden']) && $_POST['grpdocs_signature_submit_hidden'] == 1) {
         //  Save the API key to the Options table.
-		$userId     = trim($_POST['userId']);
-		$privateKey = trim($_POST['privateKey']);
+		$userId     = strip_tags(trim($_POST['userId']));
+		$privateKey = strip_tags(trim($_POST['privateKey']));
 
 		update_option( 'signature_userId', $userId);
 		update_option( 'signature_privateKey', $privateKey);

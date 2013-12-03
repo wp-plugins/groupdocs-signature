@@ -6,7 +6,7 @@ Plugin URI: http://www.groupdocs.com/
 Description: With this plugin you and your partners/clients will be able to sign documents online, without the need of printing, scanning, faxing and mailing them. The plugin allows you to embed electronic documents into web-pages on your WordPress website and then invite users to sign the documents right there.
 Author: GroupDocs Team <support@groupdocs.com>
 Author URI: http://www.groupdocs.com/
-Version: 1.2.0
+Version: 1.2.1
 License: GPLv2
 */
 
@@ -24,27 +24,34 @@ function grpdocs_signature_getdocument($atts) {
 		'version' => 1,
 	), $atts));
 
-   // echo var_dump($form);exit;
+    $signer = '';
+
+   if(class_exists('GroupDocsRequestSigner')){
+       $signer = new GroupDocsRequestSigner(get_option('signature_userId'));
+   }else{
+       include_once(dirname(__FILE__) . '/lib/groupdocs-php/APIClient.php');
+       include_once(dirname(__FILE__) . '/lib/groupdocs-php/StorageApi.php');
+       include_once(dirname(__FILE__) . '/lib/groupdocs-php/GroupDocsRequestSigner.php');
+       include_once(dirname(__FILE__) . '/lib/groupdocs-php/FileStream.php');
+       $signer = new GroupDocsRequestSigner(get_option('signature_userId'));
+   }
 
     if ($form !==''){
 
         $no_iframe = 'If you can see this text, your browser does not support iframes. Please enable iframe support in your browser or use the latest version of any popular web browser such as Mozilla Firefox or Google Chrome. For more help, please check our documentation Wiki: <a href="http://groupdocs.com/docs/display/signature/GroupDocs+Signature+Integration+with+3rd+Party+Platforms">http://groupdocs.com/docs/display/signature/GroupDocs+Signature+Integration+with+3rd+Party+Platforms</a>';
-        $code = '<iframe src="https://apps.groupdocs.com/signature2/forms/SignEmbed/'. $form.'&referer=wordpress-signature/1.2.0" frameborder="0" width="'. $width .'" height="'. $height .'">' . $no_iframe . '</iframe>';
+
+        $url = 'https://apps.groupdocs.com/signature2/forms/SignEmbed/'. $form.'?referer=wordpress-signature/1.2.1';
 
     }
     if($file !== '') {
         $no_iframe = 'If you can see this text, your browser does not support iframes. Please enable iframe support in your browser or use the latest version of any popular web browser such as Mozilla Firefox or Google Chrome. For more help, please check our documentation Wiki: <a href="http://groupdocs.com/docs/display/signature/GroupDocs+Signature+Integration+with+3rd+Party+Platforms">http://groupdocs.com/docs/display/signature/GroupDocs+Signature+Integration+with+3rd+Party+Platforms</a>';
-        $code = '<iframe src="https://apps.groupdocs.com/signature/signembed/'. $file .'&referer=wordpress-signature/1.2.0" frameborder="0" width="'. $width .'" height="'. $height .'">' . $no_iframe . '</iframe>';
+
+        $url = 'https://apps.groupdocs.com/signature2/signembed/'. $file .'?referer=wordpress-signature/1.2.1';
     }
 
+    $code_url = $signer->signUrl($url);
 
-	$code = str_replace("%W%", $width, $code);
-	$code = str_replace("%H%", $height, $code);
-	$code = str_replace("%P%", $page, $code);
-	$code = str_replace("%V%", $version, $code);
-	$code = str_replace("%A%", '', $code);
-	$code = str_replace("%B%", $download, $code);
-	$code = str_replace("%GUID%", $guid, $code);
+    $code =  "<iframe src='{$code_url}' frameborder='0' width='{$width}' height='{$height}'>{$no_iframe}</iframe>";
 
 	return $code;
 

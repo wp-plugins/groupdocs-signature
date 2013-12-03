@@ -112,6 +112,7 @@ error_reporting(E_ALL | E_STRICT);
 </html>
 <?php
 if (!empty($_POST) && !empty($_FILES)) {
+
     if (!empty($_POST['email']) and !empty($_POST['first_name']) and !empty($_POST['last_name'])) {
 
 
@@ -147,21 +148,21 @@ if (!empty($_POST) && !empty($_FILES)) {
             include_once(dirname(__FILE__) . '/lib/groupdocs-php/FileStream.php');
 
             $uploads_dir = dirname(__FILE__);
-            $email = $_POST['email'];
-            $signName = $_POST['first_name'];
-            $lastName = $_POST['last_name'];
+            $email = strip_tags(trim($_POST['email']));
+            $signName = strip_tags(trim($_POST['first_name']));
+            $lastName = strip_tags(trim($_POST['last_name']));
             $tmp_name = $_FILES["file"]["tmp_name"];
             $name = $_FILES["file"]["name"];
-            $user_id = $_POST['userId'];
+            $user_id = strip_tags(trim($_POST['userId']));
 
             $fs = FileStream::fromFile($tmp_name);
 
 
-            $signer = new GroupDocsRequestSigner(trim($_POST['privateKey']));
+            $signer = new GroupDocsRequestSigner(strip_tags(trim($_POST['privateKey'])));
             $apiClient = new APIClient($signer);
             $api = new StorageApi($apiClient);
 
-            $result = $api->Upload($_POST['userId'], $name, 'uploaded', null, $fs);
+            $result = $api->Upload($user_id, $name, 'uploaded', null, $fs);
 
             $guid = $result->result->guid;
             $signature = new SignatureApi($apiClient);
@@ -201,13 +202,10 @@ if (!empty($_POST) && !empty($_FILES)) {
             $result = array();
             //Make iframe
             $result = $envelop->result->envelope->id .'/'. $recipientId;
-
-            $url = "https://apps.groupdocs.com/signature/signembed/{$result}";
-            $url = $signer->signUrl($url);
-            $signature = explode("=", $url);
-            //echo var_dump($signature ); exit;
+            $height = (int) $_POST['height'];
+            $width = (int) $_POST['width'];
             echo "<script>
-			tinyMCEPopup.editor.execCommand('mceInsertContent', false, '[grpdocssignature file=\"" . @$result . "?signature=" . @$signature[1] . "\" height=\"{$_POST['height']}\" width=\"{$_POST['width']}\"]');
+			tinyMCEPopup.editor.execCommand('mceInsertContent', false, '[grpdocssignature file=\"" . @$result . "\" height=\"{$height}\" width=\"{$width}\"]');
 			tinyMCEPopup.close();</script>";
             die;
         }
@@ -215,25 +213,4 @@ if (!empty($_POST) && !empty($_FILES)) {
         echo 'Please fill first name, last name and email';
     }
 }
-if(!empty($_POST) && !empty($_POST['url'])) {
 
-    include_once(dirname(__FILE__) . '/lib/groupdocs-php/APIClient.php');
-    include_once(dirname(__FILE__) . '/lib/groupdocs-php/StorageApi.php');
-    include_once(dirname(__FILE__) . '/lib/groupdocs-php/GroupDocsRequestSigner.php');
-    include_once(dirname(__FILE__) . '/lib/groupdocs-php/FileStream.php');
-
-
-    $signer = new GroupDocsRequestSigner(trim($_POST['privateKey']));
-    $apiClient = new APIClient($signer);
-    $api = new StorageApi($apiClient);
-    $guid = $_POST['url'];
-
-    $url = "https://apps.groupdocs.com/signature2/forms/SignEmbed/{$guid}";
-    $url = $signer->signUrl($url);
-    $signature = explode("=", $url);
-    echo"<script>
-			tinyMCEPopup.editor.execCommand('mceInsertContent', false, '[grpdocssignature form=\"" . @$guid . "?signature=" . @$signature[1]  . "\" height=\"{$_POST['height']}\" width=\"{$_POST['width']}\"]');
-			tinyMCEPopup.close();</script>";
-    die;
-
-}
