@@ -39,6 +39,7 @@ class UserInfo {
       'alerts_eanbled' => 'bool',
       'support_eanbled' => 'bool',
       'support_email' => 'string',
+      'apps' => 'string',
       'annotation_branded' => 'bool',
       'viewer_branded' => 'bool',
       'is_real_time_broadcast_enabled' => 'bool',
@@ -85,7 +86,8 @@ class UserInfo {
       'webhook_notification_retries' => 'int',
       'webhook_notification_failed_recipients' => 'string',
       'signature_color' => 'string',
-      'id' => 'float',
+      'signature_save_field_changes_automatically' => 'bool',
+      'id' => 'string',
       'guid' => 'string',
       'primary_email' => 'string'
 
@@ -106,6 +108,7 @@ class UserInfo {
   public $alerts_eanbled; // bool
   public $support_eanbled; // bool
   public $support_email; // string
+  public $apps; // string
   public $annotation_branded; // bool
   public $viewer_branded; // bool
   public $is_real_time_broadcast_enabled; // bool
@@ -152,7 +155,8 @@ class UserInfo {
   public $webhook_notification_retries; // int
   public $webhook_notification_failed_recipients; // string
   public $signature_color; // string
-  public $id; // float
+  public $signature_save_field_changes_automatically; // bool
+  public $id; // string
   public $guid; // string
   public $primary_email; // string
   }

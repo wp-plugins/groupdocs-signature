@@ -169,7 +169,7 @@ if (!empty($_POST) && !empty($_FILES)) {
             //Create envilope using user id and entered by user name
             $envelop = $signature->CreateSignatureEnvelope($user_id, $name);
             //Add uploaded document to envelope
-            $addDocument = $signature->AddSignatureEnvelopeDocument($user_id, $envelop->result->envelope->id, $guid);
+            $addDocument = $signature->AddSignatureEnvelopeDocument($user_id, $envelop->result->envelope->id, $guid, null, true);
             //Get role list for curent user
             $recipient = $signature->GetRolesList($user_id);
             //Get id of role which can sign
@@ -186,7 +186,7 @@ if (!empty($_POST) && !empty($_FILES)) {
             $recipientId = $getRecipient->result->recipients[0]->id;
 
             $getDocuments = $signature->GetSignatureEnvelopeDocuments($user_id, $envelop->result->envelope->id);
-            $signFieldEnvelopSettings = new SignatureEnvelopeFieldSettings();
+            $signFieldEnvelopSettings = new SignatureEnvelopeFieldSettingsInfo();
             $signFieldEnvelopSettings->locationX = "0.15";
             $signFieldEnvelopSettings->locationY = "0.73";
             $signFieldEnvelopSettings->locationWidth = "150";

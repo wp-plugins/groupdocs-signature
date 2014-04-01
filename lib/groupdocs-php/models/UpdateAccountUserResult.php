@@ -24,13 +24,13 @@
 class UpdateAccountUserResult {
 
   static $swaggerTypes = array(
-      'id' => 'float',
+      'id' => 'string',
       'guid' => 'string',
       'primary_email' => 'string'
 
     );
 
-  public $id; // float
+  public $id; // string
   public $guid; // string
   public $primary_email; // string
   }

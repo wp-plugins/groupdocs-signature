@@ -29,7 +29,8 @@ class AnnotationReplyInfo {
       'userName' => 'string',
       'text' => 'string',
       'repliedOn' => 'string',
-      'parentReplyGuid' => 'string'
+      'parentReplyGuid' => 'string',
+      'isAvatarExist' => 'bool'
 
     );
 
@@ -39,5 +40,6 @@ class AnnotationReplyInfo {
   public $text; // string
   public $repliedOn; // string
   public $parentReplyGuid; // string
+  public $isAvatarExist; // bool
   }
 

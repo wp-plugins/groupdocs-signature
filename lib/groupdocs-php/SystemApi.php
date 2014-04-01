@@ -170,7 +170,7 @@ class SystemApi {
         throw new ApiException("missing required parameters", 400);
       }
       //parse inputs
-  	  $resourcePath = str_replace("*", "", "/system/{callerId}/plans/{family}?invalidate={invalidate}");
+  	  $resourcePath = str_replace("*", "", "/system/{callerId}/plans/{family}");
   	  $resourcePath = str_replace("{format}", "json", $resourcePath);
   	  $method = "GET";
       $queryParams = array();

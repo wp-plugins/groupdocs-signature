@@ -717,7 +717,7 @@ class AntApi {
 	 * Move Annotation Marker
    * userId, string: User GUID (required)
    * annotationId, string: Annotation ID (required)
-   * body, Point: position (required)
+   * body, MarkerPosition: Annotation marker position (required)
    * @return MoveAnnotationResponse
 	 */
 
@@ -801,11 +801,12 @@ class AntApi {
 	 * Get Shared Link Access Rights
    * userId, string: User GUID (required)
    * fileId, string: File ID (required)
+   * body, AnnotationReviewerRights: Access Rights for the collaborate link (required)
    * @return GetSharedLinkAccessRightsResponse
 	 */
 
-   public function GetSharedLinkAccessRights($userId, $fileId) {
-      if( $userId === null || $fileId === null ) {
+   public function GetSharedLinkAccessRights($userId, $fileId, $body) {
+      if( $userId === null || $fileId === null || $body === null ) {
         throw new ApiException("missing required parameters", 400);
       }
       //parse inputs
@@ -842,7 +843,7 @@ class AntApi {
 	 * Set Shared Link Access Rights
    * userId, string: User GUID (required)
    * fileId, string: File ID (required)
-   * body, int: Access Rights for the collaborate link (required)
+   * body, AnnotationReviewerRights: Access Rights for the collaborate link (required)
    * @return SetSharedLinkAccessRightsResponse
 	 */
 

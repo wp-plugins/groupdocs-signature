@@ -54,6 +54,11 @@ Please [contact us](http://groupdocs.com/about/contact/) for more help.
 
 == Changelog ==
 
+= 1.2.2 =
+* Update GroupDocs SDK v1.8.2 
+* Changed the method AddSignatureEnvelopeDocument
+* Renamed the SignatureEnvelopeFieldSettings class in SignatureEnvelopeFieldSettingsInfo 
+
 = 1.2.1 =
 * Minor security fixes
 
@@ -65,4 +70,17 @@ Please [contact us](http://groupdocs.com/about/contact/) for more help.
 
 = 1.0 =
 * Initial release.
+
+
+
+
+
+
+
+
+
+
+
+
+
 

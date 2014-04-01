@@ -25,11 +25,13 @@ class AnswerInfo {
 
   static $swaggerTypes = array(
       'text' => 'string',
-      'value' => 'string'
+      'value' => 'string',
+      'ordinal' => 'int'
 
     );
 
   public $text; // string
   public $value; // string
+  public $ordinal; // int
   }
 

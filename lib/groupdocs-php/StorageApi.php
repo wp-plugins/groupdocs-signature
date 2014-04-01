@@ -40,6 +40,52 @@ class StorageApi {
 	}
 
   /**
+	 * CancelFileUpload
+	 * Cancel file upload
+   * userId, string: User GUID (optional)
+   * fileId, string: file Id (optional)
+   * filePath, string: File path (optional)
+   * @return CancelFileUploadResponse
+	 */
+
+   public function CancelFileUpload($userId=null, $fileId=null, $filePath=null) {
+      if( $userId === null || $fileId === null || $filePath === null ) {
+        throw new ApiException("missing required parameters", 400);
+      }
+      //parse inputs
+  	  $resourcePath = str_replace("*", "", "/storage/{userId}/cancelUpload/{fileId}/{filePath}");
+  	  $resourcePath = str_replace("{format}", "json", $resourcePath);
+  	  $method = "GET";
+      $queryParams = array();
+      $headerParams = array();
+
+      if($userId !== null) {
+  			$resourcePath = str_replace("{" . "userId" . "}",
+  			                            $userId, $resourcePath);
+  		}
+  		if($fileId !== null) {
+  			$resourcePath = str_replace("{" . "fileId" . "}",
+  			                            $fileId, $resourcePath);
+  		}
+  		if($filePath !== null) {
+  			$resourcePath = str_replace("{" . "filePath" . "}",
+  			                            $filePath, $resourcePath);
+  		}
+  		//make the API Call
+      if (! isset($body)) {
+        $body = null;
+      }
+      $response = $this->apiClient->callAPI($this->basePath, $resourcePath, $method,
+  		                                      $queryParams, $body, $headerParams);
+      if(! $response){
+        return null;
+      }
+
+  	  $responseObject = $this->apiClient->deserialize($response,
+  		                                                'CancelFileUploadResponse');
+  	  return $responseObject;
+      }
+  /**
 	 * GetStorageInfo
 	 * Get storage info
    * userId, string: User GUID (required)
@@ -505,12 +551,12 @@ class StorageApi {
    * userId, string: User GUID (required)
    * path, string: Path (required)
    * mode, string: Mode (optional)
-   * Groupdocs_Copy, string: File ID (copy) (optional)
    * Groupdocs_Move, string: File ID (move) (optional)
+   * Groupdocs_Copy, string: File ID (copy) (optional)
    * @return FileMoveResponse
 	 */
 
-   public function MoveFile($userId, $path, $mode=null, $Groupdocs_Copy=null, $Groupdocs_Move=null) {
+   public function MoveFile($userId, $path, $mode=null, $Groupdocs_Move=null, $Groupdocs_Copy=null) {
       if( $userId === null || $path === null ) {
         throw new ApiException("missing required parameters", 400);
       }
@@ -528,11 +574,11 @@ class StorageApi {
       if($mode !== null) {
   		  $queryParams['mode'] = $this->apiClient->toPathValue($mode);
   		}
-  		if($Groupdocs_Copy !== null) {
-  		 	$headerParams['Groupdocs-Copy'] = $this->apiClient->toPathValue($Groupdocs_Copy);
-  		}
-      if($Groupdocs_Move !== null) {
+  		if($Groupdocs_Move !== null) {
   		 	$headerParams['Groupdocs-Move'] = $this->apiClient->toPathValue($Groupdocs_Move);
+  		}
+      if($Groupdocs_Copy !== null) {
+  		 	$headerParams['Groupdocs-Copy'] = $this->apiClient->toPathValue($Groupdocs_Copy);
   		}
       if($userId !== null) {
   			$resourcePath = str_replace("{" . "userId" . "}",
@@ -755,7 +801,7 @@ class StorageApi {
 	 * Move to trash
    * userId, string: User GUID (required)
    * path, string: Path (required)
-   * @return FolderMoveResponse
+   * @return DeleteResponse
 	 */
 
    public function MoveToTrash($userId, $path) {
@@ -788,7 +834,7 @@ class StorageApi {
       }
 
   	  $responseObject = $this->apiClient->deserialize($response,
-  		                                                'FolderMoveResponse');
+  		                                                'DeleteResponse');
   	  return $responseObject;
       }
   /**

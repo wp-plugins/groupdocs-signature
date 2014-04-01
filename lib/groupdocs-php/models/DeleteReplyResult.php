@@ -26,12 +26,14 @@ class DeleteReplyResult {
   static $swaggerTypes = array(
       'replyGuid' => 'string',
       'annotationGuid' => 'string',
-      'replies' => 'array[AnnotationReplyInfo]'
+      'replies' => 'array[AnnotationReplyInfo]',
+      'serverTime' => 'string'
 
     );
 
   public $replyGuid; // string
   public $annotationGuid; // string
   public $replies; // array[AnnotationReplyInfo]
+  public $serverTime; // string
   }
 

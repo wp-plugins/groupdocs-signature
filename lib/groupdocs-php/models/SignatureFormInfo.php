@@ -40,7 +40,8 @@ class SignatureFormInfo {
       'waterMarkImage' => 'string',
       'fieldsCount' => 'float',
       'notifyOwnerOnSign' => 'bool',
-      'attachSignedDocument' => 'bool'
+      'attachSignedDocument' => 'bool',
+      'notifyOtherOnSign' => 'string'
 
     );
 
@@ -61,5 +62,6 @@ class SignatureFormInfo {
   public $fieldsCount; // float
   public $notifyOwnerOnSign; // bool
   public $attachSignedDocument; // bool
+  public $notifyOtherOnSign; // string
   }
 

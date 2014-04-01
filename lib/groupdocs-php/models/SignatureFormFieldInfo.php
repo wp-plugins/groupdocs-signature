@@ -37,7 +37,9 @@ class SignatureFormFieldInfo {
       'acceptableValues' => 'string',
       'defaultValue' => 'string',
       'tooltip' => 'string',
-      'guidanceText' => 'string'
+      'guidanceText' => 'string',
+      'groupName' => 'string',
+      'settings' => 'string'
 
     );
 
@@ -55,5 +57,7 @@ class SignatureFormFieldInfo {
   public $defaultValue; // string
   public $tooltip; // string
   public $guidanceText; // string
+  public $groupName; // string
+  public $settings; // string
   }
 

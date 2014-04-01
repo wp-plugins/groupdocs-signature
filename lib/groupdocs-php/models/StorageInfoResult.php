@@ -29,7 +29,8 @@ class StorageInfoResult {
       'doc_credits' => 'int',
       'avail_credits' => 'int',
       'total_documents' => 'int',
-      'avail_documents' => 'string'
+      'avail_documents' => 'string',
+      'maxViewingFileSize' => 'string'
 
     );
 
@@ -39,5 +40,6 @@ class StorageInfoResult {
   public $avail_credits; // int
   public $total_documents; // int
   public $avail_documents; // string
+  public $maxViewingFileSize; // string
   }
 

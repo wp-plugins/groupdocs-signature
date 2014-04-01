@@ -25,7 +25,7 @@ class DatasourceField {
 
   static $swaggerTypes = array(
       'name' => 'string',
-      'values' => 'string',
+      'values' => 'array[string]',
       'contentType' => 'string',
       'type' => 'string',
       'nested_fields' => 'array[DatasourceField]'
@@ -33,7 +33,7 @@ class DatasourceField {
     );
 
   public $name; // string
-  public $values; // string
+  public $values; // array[string]
   public $contentType; // string
   public $type; // string
   public $nested_fields; // array[DatasourceField]

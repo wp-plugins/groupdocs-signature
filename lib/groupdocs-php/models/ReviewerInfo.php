@@ -29,9 +29,10 @@ class ReviewerInfo {
       'primary_email' => 'string',
       'firstName' => 'string',
       'lastName' => 'string',
-      'access_rights' => 'int',
+      'access_rights' => 'string',
       'color' => 'int',
-      'customEmailMessage' => 'string'
+      'customEmailMessage' => 'string',
+      'avatar' => 'array[int]'
 
     );
 
@@ -40,8 +41,9 @@ class ReviewerInfo {
   public $primary_email; // string
   public $firstName; // string
   public $lastName; // string
-  public $access_rights; // int
+  public $access_rights; // string
   public $color; // int
   public $customEmailMessage; // string
+  public $avatar; // array[int]
   }
 

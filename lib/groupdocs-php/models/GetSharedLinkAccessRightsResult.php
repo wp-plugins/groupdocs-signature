@@ -24,10 +24,10 @@
 class GetSharedLinkAccessRightsResult {
 
   static $swaggerTypes = array(
-      'accessRights' => 'int'
+      'accessRights' => 'string'
 
     );
 
-  public $accessRights; // int
+  public $accessRights; // string
   }
 

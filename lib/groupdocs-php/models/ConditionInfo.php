@@ -28,7 +28,8 @@ class ConditionInfo {
       'pageId' => 'int',
       'answerId' => 'string',
       'action' => 'string',
-      'operator' => 'string'
+      'operator' => 'string',
+      'operatorComparer' => 'string'
 
     );
 
@@ -37,5 +38,6 @@ class ConditionInfo {
   public $answerId; // string
   public $action; // string
   public $operator; // string
+  public $operatorComparer; // string
   }
 

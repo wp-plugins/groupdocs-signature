@@ -32,7 +32,8 @@ class PublicSignatureSignDocumentSignerSettingsInfo {
       'width' => 'float',
       'height' => 'float',
       'placeSignatureOn' => 'string',
-      'data' => 'string'
+      'data' => 'string',
+      'fields' => 'array[SignatureDocumentFieldInfo]'
 
     );
 
@@ -45,5 +46,6 @@ class PublicSignatureSignDocumentSignerSettingsInfo {
   public $height; // float
   public $placeSignatureOn; // string
   public $data; // string
+  public $fields; // array[SignatureDocumentFieldInfo]
   }
 

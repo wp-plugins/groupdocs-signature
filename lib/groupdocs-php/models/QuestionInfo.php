@@ -31,7 +31,10 @@ class QuestionInfo {
       'disabled' => 'bool',
       'type' => 'string',
       'answers' => 'array[AnswerInfo]',
-      'conditions' => 'array[ConditionInfo]'
+      'conditions' => 'array[ConditionInfo]',
+      'acceptableValues' => 'array[string]',
+      'max_length' => 'int',
+      'rect' => 'Rectangle'
 
     );
 
@@ -43,5 +46,8 @@ class QuestionInfo {
   public $type; // string
   public $answers; // array[AnswerInfo]
   public $conditions; // array[ConditionInfo]
+  public $acceptableValues; // array[string]
+  public $max_length; // int
+  public $rect; // Rectangle
   }
 

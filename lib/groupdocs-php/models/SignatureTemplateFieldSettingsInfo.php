@@ -44,7 +44,12 @@ class SignatureTemplateFieldSettingsInfo {
       'defaultValue' => 'string',
       'tooltip' => 'string',
       'align' => 'int',
-      'guidanceText' => 'string'
+      'guidanceText' => 'string',
+      'groupName' => 'string',
+      'fieldType' => 'int',
+      'settings' => 'string',
+      'pageWidth' => 'int',
+      'pageHeight' => 'int'
 
     );
 
@@ -69,5 +74,10 @@ class SignatureTemplateFieldSettingsInfo {
   public $tooltip; // string
   public $align; // int
   public $guidanceText; // string
+  public $groupName; // string
+  public $fieldType; // int
+  public $settings; // string
+  public $pageWidth; // int
+  public $pageHeight; // int
   }
 

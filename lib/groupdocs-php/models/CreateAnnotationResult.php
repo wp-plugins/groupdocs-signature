@@ -24,7 +24,7 @@
 class CreateAnnotationResult {
 
   static $swaggerTypes = array(
-      'id' => 'float',
+      'id' => 'string',
       'annotationGuid' => 'string',
       'replyGuid' => 'string',
       'documentGuid' => 'string',
@@ -34,7 +34,7 @@ class CreateAnnotationResult {
 
     );
 
-  public $id; // float
+  public $id; // string
   public $annotationGuid; // string
   public $replyGuid; // string
   public $documentGuid; // string

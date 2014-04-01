@@ -32,6 +32,7 @@ class UploadRequestResult {
       'version' => 'int',
       'view_job_id' => 'float',
       'thumbnail' => 'string',
+      'upload_time' => 'string',
       'id' => 'float',
       'guid' => 'string'
 
@@ -45,6 +46,7 @@ class UploadRequestResult {
   public $version; // int
   public $view_job_id; // float
   public $thumbnail; // string
+  public $upload_time; // string
   public $id; // float
   public $guid; // string
   }

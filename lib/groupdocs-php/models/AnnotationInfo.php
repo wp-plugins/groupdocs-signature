@@ -29,6 +29,7 @@ class AnnotationInfo {
       'sessionGuid' => 'string',
       'creatorGuid' => 'string',
       'box' => 'Rectangle',
+      'pageNumber' => 'int',
       'annotationPosition' => 'Point',
       'range' => 'Range',
       'svgPath' => 'string',
@@ -48,6 +49,7 @@ class AnnotationInfo {
   public $sessionGuid; // string
   public $creatorGuid; // string
   public $box; // Rectangle
+  public $pageNumber; // int
   public $annotationPosition; // Point
   public $range; // Range
   public $svgPath; // string

@@ -27,7 +27,11 @@ class TemplateField {
       'page' => 'int',
       'name' => 'string',
       'type' => 'string',
-      'rect' => 'Rectangle'
+      'rect' => 'Rectangle',
+      'maxlength' => 'int',
+      'mandatory' => 'bool',
+      'fieldtype' => 'string',
+      'acceptableValues' => 'array[string]'
 
     );
 
@@ -35,5 +39,9 @@ class TemplateField {
   public $name; // string
   public $type; // string
   public $rect; // Rectangle
+  public $maxlength; // int
+  public $mandatory; // bool
+  public $fieldtype; // string
+  public $acceptableValues; // array[string]
   }
 

@@ -468,15 +468,16 @@ class AsyncApi {
    * statusIds, string: Comma separated status identifiers (optional)
    * actions, string: Actions (optional)
    * excludedActions, string: Excluded actions (optional)
+   * jobName, string: Foltred job name (optional)
    * @return GetJobsResponse
 	 */
 
-   public function GetJobs($userId, $pageIndex=null, $pageSize=null, $DateTime=null, $statusIds=null, $actions=null, $excludedActions=null) {
+   public function GetJobs($userId, $pageIndex=null, $pageSize=null, $DateTime=null, $statusIds=null, $actions=null, $excludedActions=null, $jobName=null) {
       if( $userId === null ) {
         throw new ApiException("missing required parameters", 400);
       }
       //parse inputs
-  	  $resourcePath = str_replace("*", "", "/async/{userId}/jobs?page={pageIndex}&count={pageSize}&date={date}&statusIds={statusIds}&actions={actions}&excluded_actions={excludedActions}");
+  	  $resourcePath = str_replace("*", "", "/async/{userId}/jobs?page={pageIndex}&count={pageSize}&date={date}&statusIds={statusIds}&actions={actions}&excluded_actions={excludedActions}&jobName={jobName}");
   	  $pos = strpos($resourcePath, "?");
 	  if($pos !== false){
   	  	$resourcePath = substr($resourcePath, 0, $pos);
@@ -503,6 +504,9 @@ class AsyncApi {
   		}
   		if($excludedActions !== null) {
   		  $queryParams['excluded_actions'] = $this->apiClient->toPathValue($excludedActions);
+  		}
+  		if($jobName !== null) {
+  		  $queryParams['jobName'] = $this->apiClient->toPathValue($jobName);
   		}
   		if($userId !== null) {
   			$resourcePath = str_replace("{" . "userId" . "}",

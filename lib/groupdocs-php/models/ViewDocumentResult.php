@@ -35,6 +35,9 @@ class ViewDocumentResult {
       'pageHtml' => 'string',
       'pageCss' => 'string',
       'password' => 'string',
+      'lic' => 'bool',
+      'pdfPrintUrl' => 'string',
+      'htmlPrintUrl' => 'string',
       'id' => 'float',
       'guid' => 'string'
 
@@ -51,6 +54,9 @@ class ViewDocumentResult {
   public $pageHtml; // string
   public $pageCss; // string
   public $password; // string
+  public $lic; // bool
+  public $pdfPrintUrl; // string
+  public $htmlPrintUrl; // string
   public $id; // float
   public $guid; // string
   }
