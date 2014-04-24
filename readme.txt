@@ -53,6 +53,8 @@ Please [contact us](http://groupdocs.com/about/contact/) for more help.
 
 
 == Changelog ==
+= 1.2.3 =
+* Fixed bugs in sign the iframe of  url
 
 = 1.2.2 =
 * Update GroupDocs SDK v1.8.2 
