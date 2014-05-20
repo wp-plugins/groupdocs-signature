@@ -4,6 +4,11 @@ require_once('bootstrap.php');
 
 ini_set('display_errors', '0');
 error_reporting(E_ALL | E_STRICT);
+if (file_exists('../../../wp-includes/js/tinymce/tiny_mce_popup.js')){
+    $tiny = '<script type="text/javascript" src="../../../wp-includes/js/tinymce/tiny_mce_popup.js"></script>';
+}else{
+    $tiny = '<script type="text/javascript" src="js/tiny_mce_popup.js"></script>';
+}
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -12,7 +17,7 @@ error_reporting(E_ALL | E_STRICT);
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>GroupDocs Signature</title>
     <script type="text/javascript" src="js/jquery-1.5.min.js"></script>
-	<script type="text/javascript" src="js/tiny_mce_popup.js"></script>
+    <?php echo $tiny ?>
 	<script type="text/javascript" src="js/grpdocs-dialog.js"></script>
 
 	<link href="css/grpdocs-dialog.css" type="text/css" rel="stylesheet" />

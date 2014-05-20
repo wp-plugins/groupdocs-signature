@@ -4,7 +4,7 @@ Contributors: GroupDocs Team
 Tags: groupdocs, online signature, collect signatures online, sign documents online, sign contracts online, apply signature online, e-signature, electronic signature, sign, signature
 Author URI: http://groupdocs.com/apps/signature
 Requires at least: 2.8
-Tested up to: 3.4.1
+Tested up to: 3.9.1
 Stable tag: trunk
 License: GPLv2
 
@@ -53,6 +53,10 @@ Please [contact us](http://groupdocs.com/about/contact/) for more help.
 
 
 == Changelog ==
+
+= 1.2.4 =
+* Minor bug fixes.(Support Wordpress version 3.9)
+
 = 1.2.3 =
 * Fixed bugs in sign the iframe of  url
 

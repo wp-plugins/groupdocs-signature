@@ -6,7 +6,7 @@ Plugin URI: http://www.groupdocs.com/
 Description: With this plugin you and your partners/clients will be able to sign documents online, without the need of printing, scanning, faxing and mailing them. The plugin allows you to embed electronic documents into web-pages on your WordPress website and then invite users to sign the documents right there.
 Author: GroupDocs Team <support@groupdocs.com>
 Author URI: http://www.groupdocs.com/
-Version: 1.2.3
+Version: 1.2.4
 License: GPLv2
 */
 
@@ -51,7 +51,7 @@ function grpdocs_signature_getdocument($atts) {
 
     $code_url = $signer->signUrl($url);
 
-    $code =  "<iframe src='{$code_url}&referer=wordpress-signature/1.2.3' frameborder='0' width='{$width}' height='{$height}'>{$no_iframe}</iframe>";
+    $code =  "<iframe src='{$code_url}&referer=wordpress-signature/1.2.4' frameborder='0' width='{$width}' height='{$height}'>{$no_iframe}</iframe>";
 
 	return $code;
 
