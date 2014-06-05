@@ -45,11 +45,11 @@ For more details, please visit our website:
 
 == Frequently Asked Questions ==
 
-[How to create a signature form?](http://groupdocs.com/docs/pages/viewpage.action?pageId=1900670)
+[How to create a signature form?](http://groupdocs.com/docs/display/signature/How+to+Create+a+Signature+Form)
  
-[How to get a signature form ID?](http://groupdocs.com/docs/pages/viewpage.action?pageId=1900672)
+[How to get a signature form ID?](http://groupdocs.com/docs/display/signature/How+to+Get+a+Signature+Form+ID)
 
-Please [contact us](http://groupdocs.com/about/contact/) for more help.
+Please [contact us](http://groupdocs.com/corporate/contact-us) for more help.
 
 
 == Changelog ==
