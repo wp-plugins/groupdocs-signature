@@ -50,10 +50,12 @@ if (file_exists('../../../wp-includes/js/tinymce/tiny_mce_popup.js')){
             </td>
         </tr>
         <tr>
+            <div id=first_name>
             <td align="right" class="gray dwl_gray"><strong>First Name</strong></td>
             <td valign="top"><input name="first_name" type="text" class="opt dwl" id="first_name" size="15"
                                     style="text-align:left" />
             </td>
+            </div>
         </tr>
         <tr>
             <td align="right" class="gray dwl_gray"><strong>Last Name</strong></td>

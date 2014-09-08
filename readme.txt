@@ -4,7 +4,7 @@ Contributors: GroupDocs Team
 Tags: groupdocs, online signature, collect signatures online, sign documents online, sign contracts online, apply signature online, e-signature, electronic signature, sign, signature
 Author URI: http://groupdocs.com/apps/signature
 Requires at least: 2.8
-Tested up to: 3.9.1
+Tested up to: 4.0
 Stable tag: trunk
 License: GPLv2
 
