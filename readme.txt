@@ -1,5 +1,5 @@
 
-=== GroupDocs Online Signature Plugin ===
+=== GroupDocs.Signature for Cloud ===
 Contributors: GroupDocs Team
 Tags: groupdocs, online signature, collect signatures online, sign documents online, sign contracts online, apply signature online, e-signature, electronic signature, sign, signature
 Author URI: http://groupdocs.com/apps/signature
@@ -16,7 +16,7 @@ Invite your clients and partners to sign contracts, invoices and any other docum
 = Get Documents Signed Online =
 With this plugin you and your partners/clients will be able to sign documents online, without the need of printing, scanning, faxing and mailing them. The plugin allows you to embed electronic documents into web-pages on your WordPress website and then invite users to sign the documents right there.
 
-Recipients don't need to install any 3rd-party software or download documents in order to sign them. They need just to open a web-page with an embedded document and apply their signature online, right from a web-browser. And since GroupDocs Signature is a web-based solution, any document can be signed literally from any web-enabled device.
+Recipients don't need to install any 3rd-party software or download documents in order to sign them. They need just to open a web-page with an embedded document and apply their signature online, right from a web-browser. And since GroupDocs.Signature is a web-based solution, any document can be signed literally from any web-enabled device.
 
 = Sign Legally =
 All documents signed with the GroupDocs' online signature service are absolutely legally binding in most of the developed countries, meaning that they have the same legal effect as documents signed with a handwritten signature. It's a completely paperless solution that will allow you to close contracts faster by applying legally binding online signatures.
