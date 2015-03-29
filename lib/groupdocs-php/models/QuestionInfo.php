@@ -34,7 +34,10 @@ class QuestionInfo {
       'conditions' => 'array[ConditionInfo]',
       'acceptableValues' => 'array[string]',
       'max_length' => 'int',
-      'rect' => 'Rectangle'
+      'rect' => 'Rectangle',
+      'regionName' => 'string',
+      'hint' => 'string',
+      'dimension' => 'FieldDimension'
 
     );
 
@@ -49,5 +52,8 @@ class QuestionInfo {
   public $acceptableValues; // array[string]
   public $max_length; // int
   public $rect; // Rectangle
+  public $regionName; // string
+  public $hint; // string
+  public $dimension; // FieldDimension
   }
 

@@ -28,7 +28,9 @@ class DatasourceField {
       'values' => 'array[string]',
       'contentType' => 'string',
       'type' => 'string',
-      'nested_fields' => 'array[DatasourceField]'
+      'nested_fields' => 'array[DatasourceField]',
+      'regionName' => 'string',
+      'dimension' => 'Dimension'
 
     );
 
@@ -37,5 +39,7 @@ class DatasourceField {
   public $contentType; // string
   public $type; // string
   public $nested_fields; // array[DatasourceField]
+  public $regionName; // string
+  public $dimension; // Dimension
   }
 

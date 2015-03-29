@@ -32,7 +32,10 @@ class SignatureTemplateSettingsInfo {
       'emailSubject' => 'string',
       'emailBody' => 'string',
       'waterMarkText' => 'string',
-      'waterMarkImage' => 'string'
+      'waterMarkImage' => 'string',
+      'enableTypedSignature' => 'bool',
+      'enableUploadedSignature' => 'bool',
+      'tags' => 'string'
 
     );
 
@@ -45,5 +48,8 @@ class SignatureTemplateSettingsInfo {
   public $emailBody; // string
   public $waterMarkText; // string
   public $waterMarkImage; // string
+  public $enableTypedSignature; // bool
+  public $enableUploadedSignature; // bool
+  public $tags; // string
   }
 

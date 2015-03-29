@@ -468,16 +468,18 @@ class AsyncApi {
    * statusIds, string: Comma separated status identifiers (optional)
    * actions, string: Actions (optional)
    * excludedActions, string: Excluded actions (optional)
-   * jobName, string: Foltred job name (optional)
+   * jobName, string: Filtred job name (optional)
+   * orderBy, string: Sorded column name (optional)
+   * orderAsc, bool: Order ASC (optional)
    * @return GetJobsResponse
 	 */
 
-   public function GetJobs($userId, $pageIndex=null, $pageSize=null, $DateTime=null, $statusIds=null, $actions=null, $excludedActions=null, $jobName=null) {
+   public function GetJobs($userId, $pageIndex=null, $pageSize=null, $DateTime=null, $statusIds=null, $actions=null, $excludedActions=null, $jobName=null, $orderBy=null, $orderAsc=null) {
       if( $userId === null ) {
         throw new ApiException("missing required parameters", 400);
       }
       //parse inputs
-  	  $resourcePath = str_replace("*", "", "/async/{userId}/jobs?page={pageIndex}&count={pageSize}&date={date}&statusIds={statusIds}&actions={actions}&excluded_actions={excludedActions}&jobName={jobName}");
+  	  $resourcePath = str_replace("*", "", "/async/{userId}/jobs?page={pageIndex}&count={pageSize}&date={date}&statusIds={statusIds}&actions={actions}&excluded_actions={excludedActions}&jobName={jobName}&order_by={orderBy}&order_asc={orderAsc}");
   	  $pos = strpos($resourcePath, "?");
 	  if($pos !== false){
   	  	$resourcePath = substr($resourcePath, 0, $pos);
@@ -507,6 +509,12 @@ class AsyncApi {
   		}
   		if($jobName !== null) {
   		  $queryParams['jobName'] = $this->apiClient->toPathValue($jobName);
+  		}
+  		if($orderBy !== null) {
+  		  $queryParams['order_by'] = $this->apiClient->toPathValue($orderBy);
+  		}
+  		if($orderAsc !== null) {
+  		  $queryParams['order_asc'] = $this->apiClient->toPathValue($orderAsc);
   		}
   		if($userId !== null) {
   			$resourcePath = str_replace("{" . "userId" . "}",
@@ -653,6 +661,47 @@ class AsyncApi {
 
   	  $responseObject = $this->apiClient->deserialize($response,
   		                                                'ConvertResponse');
+  	  return $responseObject;
+      }
+  /**
+	 * GetPossibleConversions
+	 * Get Possible Conversions
+   * userId, string: User GUID (required)
+   * fileExt, string: File extension to check (required)
+   * @return GetPossibleConversions
+	 */
+
+   public function GetPossibleConversions($userId, $fileExt) {
+      if( $userId === null || $fileExt === null ) {
+        throw new ApiException("missing required parameters", 400);
+      }
+      //parse inputs
+  	  $resourcePath = str_replace("*", "", "/async/{userId}/possibleConversions/{fileExt}");
+  	  $resourcePath = str_replace("{format}", "json", $resourcePath);
+  	  $method = "GET";
+      $queryParams = array();
+      $headerParams = array();
+
+      if($userId !== null) {
+  			$resourcePath = str_replace("{" . "userId" . "}",
+  			                            $userId, $resourcePath);
+  		}
+  		if($fileExt !== null) {
+  			$resourcePath = str_replace("{" . "fileExt" . "}",
+  			                            $fileExt, $resourcePath);
+  		}
+  		//make the API Call
+      if (! isset($body)) {
+        $body = null;
+      }
+      $response = $this->apiClient->callAPI($this->basePath, $resourcePath, $method,
+  		                                      $queryParams, $body, $headerParams);
+      if(! $response){
+        return null;
+      }
+
+  	  $responseObject = $this->apiClient->deserialize($response,
+  		                                                'GetPossibleConversions');
   	  return $responseObject;
       }
   

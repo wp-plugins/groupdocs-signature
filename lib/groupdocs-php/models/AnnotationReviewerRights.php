@@ -27,9 +27,7 @@ class AnnotationReviewerRights {
       'CanView' => 'int',
       'CanAnnotate' => 'int',
       'CanDownload' => 'int',
-      'CanExport' => 'int',
-      'CanDelete' => 'int',
-      'All' => 'int'
+      'CanExport' => 'int'
 
     );
 
@@ -37,7 +35,5 @@ class AnnotationReviewerRights {
   public $CanAnnotate; // int
   public $CanDownload; // int
   public $CanExport; // int
-  public $CanDelete; // int
-  public $All; // int
   }
 

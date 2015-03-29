@@ -49,7 +49,8 @@ class SignatureEnvelopeFieldSettingsInfo {
       'fieldType' => 'int',
       'settings' => 'string',
       'pageWidth' => 'int',
-      'pageHeight' => 'int'
+      'pageHeight' => 'int',
+      'lockDuringSign' => 'bool'
 
     );
 
@@ -79,5 +80,6 @@ class SignatureEnvelopeFieldSettingsInfo {
   public $settings; // string
   public $pageWidth; // int
   public $pageHeight; // int
+  public $lockDuringSign; // bool
   }
 

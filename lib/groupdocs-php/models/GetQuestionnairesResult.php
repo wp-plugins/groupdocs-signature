@@ -24,10 +24,12 @@
 class GetQuestionnairesResult {
 
   static $swaggerTypes = array(
-      'questionnaires' => 'array[QuestionnaireInfo]'
+      'questionnaires' => 'array[QuestionnaireInfo]',
+      'totalCount' => 'int'
 
     );
 
   public $questionnaires; // array[QuestionnaireInfo]
+  public $totalCount; // int
   }
 

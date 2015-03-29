@@ -39,7 +39,10 @@ class SignatureTemplateInfo {
       'recipients' => 'array[SignatureTemplateRecipientInfo]',
       'waterMarkText' => 'string',
       'waterMarkImage' => 'string',
-      'fieldsCount' => 'float'
+      'fieldsCount' => 'float',
+      'enableTypedSignature' => 'bool',
+      'enableUploadedSignature' => 'bool',
+      'tags' => 'string'
 
     );
 
@@ -59,5 +62,8 @@ class SignatureTemplateInfo {
   public $waterMarkText; // string
   public $waterMarkImage; // string
   public $fieldsCount; // float
+  public $enableTypedSignature; // bool
+  public $enableUploadedSignature; // bool
+  public $tags; // string
   }
 

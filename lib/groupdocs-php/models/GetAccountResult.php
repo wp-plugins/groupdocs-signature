@@ -24,11 +24,13 @@
 class GetAccountResult {
 
   static $swaggerTypes = array(
+      'max_file_size' => 'string',
       'max_users' => 'int',
       'users' => 'array[UserInfo]'
 
     );
 
+  public $max_file_size; // string
   public $max_users; // int
   public $users; // array[UserInfo]
   }

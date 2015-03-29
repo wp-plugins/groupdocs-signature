@@ -31,7 +31,12 @@ class TemplateField {
       'maxlength' => 'int',
       'mandatory' => 'bool',
       'fieldtype' => 'string',
-      'acceptableValues' => 'array[string]'
+      'acceptableValues' => 'array[string]',
+      'selectionPosition' => 'int',
+      'selectionLength' => 'int',
+      'isTableStartMarker' => 'bool',
+      'isTableEndMarker' => 'bool',
+      'regionName' => 'string'
 
     );
 
@@ -43,5 +48,10 @@ class TemplateField {
   public $mandatory; // bool
   public $fieldtype; // string
   public $acceptableValues; // array[string]
+  public $selectionPosition; // int
+  public $selectionLength; // int
+  public $isTableStartMarker; // bool
+  public $isTableEndMarker; // bool
+  public $regionName; // string
   }
 

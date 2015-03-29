@@ -109,63 +109,6 @@ class DocApi {
   	  return $responseObject;
       }
   /**
-	 * ViewDocumentAsHtml
-	 * View Document as Html
-   * userId, string: User GUID (required)
-   * fileId, string: File GUID (required)
-   * pageNumber, string: Page Number (optional)
-   * pageCount, string: Page Count (optional)
-   * passwordSalt, string: A password hash for password protected documents (optional)
-   * @return ViewDocumentResponse
-	 */
-
-   public function ViewDocumentAsHtml($userId, $fileId, $pageNumber=null, $pageCount=null, $passwordSalt=null) {
-      if( $userId === null || $fileId === null ) {
-        throw new ApiException("missing required parameters", 400);
-      }
-      //parse inputs
-  	  $resourcePath = str_replace("*", "", "/doc/{userId}/files/{fileId}/htmlRepresentations?page_number={pageNumber}&page_count={pageCount}&passwordSalt={passwordSalt}");
-  	  $pos = strpos($resourcePath, "?");
-	  if($pos !== false){
-  	  	$resourcePath = substr($resourcePath, 0, $pos);
-	  }
-	  $resourcePath = str_replace("{format}", "json", $resourcePath);
-  	  $method = "POST";
-      $queryParams = array();
-      $headerParams = array();
-
-      if($pageNumber !== null) {
-  		  $queryParams['page_number'] = $this->apiClient->toPathValue($pageNumber);
-  		}
-  		if($pageCount !== null) {
-  		  $queryParams['page_count'] = $this->apiClient->toPathValue($pageCount);
-  		}
-  		if($passwordSalt !== null) {
-  		  $queryParams['passwordSalt'] = $this->apiClient->toPathValue($passwordSalt);
-  		}
-  		if($userId !== null) {
-  			$resourcePath = str_replace("{" . "userId" . "}",
-  			                            $userId, $resourcePath);
-  		}
-  		if($fileId !== null) {
-  			$resourcePath = str_replace("{" . "fileId" . "}",
-  			                            $fileId, $resourcePath);
-  		}
-  		//make the API Call
-      if (! isset($body)) {
-        $body = null;
-      }
-      $response = $this->apiClient->callAPI($this->basePath, $resourcePath, $method,
-  		                                      $queryParams, $body, $headerParams);
-      if(! $response){
-        return null;
-      }
-
-  	  $responseObject = $this->apiClient->deserialize($response,
-  		                                                'ViewDocumentResponse');
-  	  return $responseObject;
-      }
-  /**
 	 * GetDocumentViews
 	 * Get Document Views
    * userId, string: User GUID (required)
@@ -794,6 +737,47 @@ class DocApi {
   	  return $responseObject;
       }
   /**
+	 * GetTemplateEditorFields
+	 * Get template editor fields
+   * userId, string: User GUID (required)
+   * fileId, string: File GUID (required)
+   * @return TemplateEditorFieldsResponse
+	 */
+
+   public function GetTemplateEditorFields($userId, $fileId) {
+      if( $userId === null || $fileId === null ) {
+        throw new ApiException("missing required parameters", 400);
+      }
+      //parse inputs
+  	  $resourcePath = str_replace("*", "", "/doc/{userId}/files/{fileId}/editor_fields");
+  	  $resourcePath = str_replace("{format}", "json", $resourcePath);
+  	  $method = "GET";
+      $queryParams = array();
+      $headerParams = array();
+
+      if($userId !== null) {
+  			$resourcePath = str_replace("{" . "userId" . "}",
+  			                            $userId, $resourcePath);
+  		}
+  		if($fileId !== null) {
+  			$resourcePath = str_replace("{" . "fileId" . "}",
+  			                            $fileId, $resourcePath);
+  		}
+  		//make the API Call
+      if (! isset($body)) {
+        $body = null;
+      }
+      $response = $this->apiClient->callAPI($this->basePath, $resourcePath, $method,
+  		                                      $queryParams, $body, $headerParams);
+      if(! $response){
+        return null;
+      }
+
+  	  $responseObject = $this->apiClient->deserialize($response,
+  		                                                'TemplateEditorFieldsResponse');
+  	  return $responseObject;
+      }
+  /**
 	 * GetDocumentFormats
 	 * Get document formats
    * userId, string: User GUID (required)
@@ -895,100 +879,6 @@ class DocApi {
   		                                      $queryParams, $body, $headerParams, $outFileStream);
       }
   /**
-	 * GetDocumentPageHtmlFixed
-	 * Returns an HTML Fixed representantion of a particular document page.
-   * userId, string: GroupDocs user global unique identifier. (required)
-   * fileId, string: Document global unique identifier. (required)
-   * pageNumber, int: Document page number to get image for. (required)
-   * expiresOn, bool: The date and time in milliseconds since epoch the URL expires. (optional)
-   * @return stream
-	 */
-
-   public function GetDocumentPageHtmlFixed($userId, $fileId, $pageNumber, $expiresOn=null, FileStream $outFileStream) {
-      if( $userId === null || $fileId === null || $pageNumber === null ) {
-        throw new ApiException("missing required parameters", 400);
-      }
-      //parse inputs
-  	  $resourcePath = str_replace("*", "", "/doc/{userId}/files/{fileId}/pages/{pageNumber}/htmlFixed?expires={expiresOn}");
-  	  $pos = strpos($resourcePath, "?");
-	  if($pos !== false){
-  	  	$resourcePath = substr($resourcePath, 0, $pos);
-	  }
-	  $resourcePath = str_replace("{format}", "json", $resourcePath);
-  	  $method = "GET";
-      $queryParams = array();
-      $headerParams = array();
-
-      if($expiresOn !== null) {
-  		  $queryParams['expires'] = $this->apiClient->toPathValue($expiresOn);
-  		}
-  		if($userId !== null) {
-  			$resourcePath = str_replace("{" . "userId" . "}",
-  			                            $userId, $resourcePath);
-  		}
-  		if($fileId !== null) {
-  			$resourcePath = str_replace("{" . "fileId" . "}",
-  			                            $fileId, $resourcePath);
-  		}
-  		if($pageNumber !== null) {
-  			$resourcePath = str_replace("{" . "pageNumber" . "}",
-  			                            $pageNumber, $resourcePath);
-  		}
-  		//make the API Call
-      if (! isset($body)) {
-        $body = null;
-      }
-      return $this->apiClient->callAPI($this->basePath, $resourcePath, $method,
-  		                                      $queryParams, $body, $headerParams, $outFileStream);
-      }
-  /**
-	 * GetDocumentPageHtml
-	 * Returns an HTML representantion of a particular document page.
-   * userId, string: GroupDocs user global unique identifier. (required)
-   * fileId, string: Document global unique identifier. (required)
-   * pageNumber, int: Document page number to get image for. (required)
-   * expiresOn, bool: The date and time in milliseconds since epoch the URL expires. (optional)
-   * @return stream
-	 */
-
-   public function GetDocumentPageHtml($userId, $fileId, $pageNumber, $expiresOn=null, FileStream $outFileStream) {
-      if( $userId === null || $fileId === null || $pageNumber === null ) {
-        throw new ApiException("missing required parameters", 400);
-      }
-      //parse inputs
-  	  $resourcePath = str_replace("*", "", "/doc/{userId}/files/{fileId}/pages/{pageNumber}/htmlRepresentations?expires={expiresOn}");
-  	  $pos = strpos($resourcePath, "?");
-	  if($pos !== false){
-  	  	$resourcePath = substr($resourcePath, 0, $pos);
-	  }
-	  $resourcePath = str_replace("{format}", "json", $resourcePath);
-  	  $method = "GET";
-      $queryParams = array();
-      $headerParams = array();
-
-      if($expiresOn !== null) {
-  		  $queryParams['expires'] = $this->apiClient->toPathValue($expiresOn);
-  		}
-  		if($userId !== null) {
-  			$resourcePath = str_replace("{" . "userId" . "}",
-  			                            $userId, $resourcePath);
-  		}
-  		if($fileId !== null) {
-  			$resourcePath = str_replace("{" . "fileId" . "}",
-  			                            $fileId, $resourcePath);
-  		}
-  		if($pageNumber !== null) {
-  			$resourcePath = str_replace("{" . "pageNumber" . "}",
-  			                            $pageNumber, $resourcePath);
-  		}
-  		//make the API Call
-      if (! isset($body)) {
-        $body = null;
-      }
-      return $this->apiClient->callAPI($this->basePath, $resourcePath, $method,
-  		                                      $queryParams, $body, $headerParams, $outFileStream);
-      }
-  /**
 	 * GetDocumentPagesImageUrls
 	 * Returns a list of URLs pointing to document page images.
    * userId, string: GroupDocs user global unique identifier. (required)
@@ -1043,59 +933,6 @@ class DocApi {
   		if($dimension !== null) {
   			$resourcePath = str_replace("{" . "dimension" . "}",
   			                            $dimension, $resourcePath);
-  		}
-  		//make the API Call
-      if (! isset($body)) {
-        $body = null;
-      }
-      $response = $this->apiClient->callAPI($this->basePath, $resourcePath, $method,
-  		                                      $queryParams, $body, $headerParams);
-      if(! $response){
-        return null;
-      }
-
-  	  $responseObject = $this->apiClient->deserialize($response,
-  		                                                'GetImageUrlsResponse');
-  	  return $responseObject;
-      }
-  /**
-	 * GetDocumentPagesHtmlUrls
-	 * Returns a list of URLs pointing to document page HTML representations.
-   * userId, string: GroupDocs user global unique identifier. (required)
-   * fileId, string: Document global unique identifier. (required)
-   * firstPage, int: Document page number to start from. (optional)
-   * pageCount, int: Page count to return URLs for. (optional)
-   * @return GetImageUrlsResponse
-	 */
-
-   public function GetDocumentPagesHtmlUrls($userId, $fileId, $firstPage=null, $pageCount=null) {
-      if( $userId === null || $fileId === null ) {
-        throw new ApiException("missing required parameters", 400);
-      }
-      //parse inputs
-  	  $resourcePath = str_replace("*", "", "/doc/{userId}/files/{fileId}/pages/htmlRepresentationUrls?first_page={firstPage}&page_count={pageCount}");
-  	  $pos = strpos($resourcePath, "?");
-	  if($pos !== false){
-  	  	$resourcePath = substr($resourcePath, 0, $pos);
-	  }
-	  $resourcePath = str_replace("{format}", "json", $resourcePath);
-  	  $method = "GET";
-      $queryParams = array();
-      $headerParams = array();
-
-      if($firstPage !== null) {
-  		  $queryParams['first_page'] = $this->apiClient->toPathValue($firstPage);
-  		}
-  		if($pageCount !== null) {
-  		  $queryParams['page_count'] = $this->apiClient->toPathValue($pageCount);
-  		}
-  		if($userId !== null) {
-  			$resourcePath = str_replace("{" . "userId" . "}",
-  			                            $userId, $resourcePath);
-  		}
-  		if($fileId !== null) {
-  			$resourcePath = str_replace("{" . "fileId" . "}",
-  			                            $fileId, $resourcePath);
   		}
   		//make the API Call
       if (! isset($body)) {

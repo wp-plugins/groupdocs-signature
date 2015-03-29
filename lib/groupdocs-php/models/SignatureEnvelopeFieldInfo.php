@@ -42,7 +42,8 @@ class SignatureEnvelopeFieldInfo {
       'tooltip' => 'string',
       'guidanceText' => 'string',
       'groupName' => 'string',
-      'settings' => 'string'
+      'settings' => 'string',
+      'lockDuringSign' => 'bool'
 
     );
 
@@ -65,5 +66,6 @@ class SignatureEnvelopeFieldInfo {
   public $guidanceText; // string
   public $groupName; // string
   public $settings; // string
+  public $lockDuringSign; // bool
   }
 

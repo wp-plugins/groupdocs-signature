@@ -47,7 +47,13 @@ class SignatureEnvelopeInfo {
       'includeViewLink' => 'bool',
       'canBeCommented' => 'bool',
       'inPersonSign' => 'bool',
-      'ownerName' => 'string'
+      'ownerName' => 'string',
+      'enableTypedSignature' => 'bool',
+      'enableUploadedSignature' => 'bool',
+      'requireUserAuthForSign' => 'bool',
+      'requestUserAuthByPhoto' => 'bool',
+      'showRecipientCommentInSignedDocument' => 'bool',
+      'tags' => 'string'
 
     );
 
@@ -75,5 +81,11 @@ class SignatureEnvelopeInfo {
   public $canBeCommented; // bool
   public $inPersonSign; // bool
   public $ownerName; // string
+  public $enableTypedSignature; // bool
+  public $enableUploadedSignature; // bool
+  public $requireUserAuthForSign; // bool
+  public $requestUserAuthByPhoto; // bool
+  public $showRecipientCommentInSignedDocument; // bool
+  public $tags; // string
   }
 

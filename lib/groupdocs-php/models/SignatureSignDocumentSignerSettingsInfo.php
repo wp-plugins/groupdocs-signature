@@ -25,23 +25,25 @@ class SignatureSignDocumentSignerSettingsInfo {
 
   static $swaggerTypes = array(
       'name' => 'string',
+      'email' => 'string',
       'top' => 'float',
       'left' => 'float',
       'width' => 'float',
       'height' => 'float',
       'placeSignatureOn' => 'string',
       'data' => 'string',
-      'fields' => 'array[SignatureFieldInfo]'
+      'fields' => 'array[SignatureSignFieldSettingsInfo]'
 
     );
 
   public $name; // string
+  public $email; // string
   public $top; // float
   public $left; // float
   public $width; // float
   public $height; // float
   public $placeSignatureOn; // string
   public $data; // string
-  public $fields; // array[SignatureFieldInfo]
+  public $fields; // array[SignatureSignFieldSettingsInfo]
   }
 

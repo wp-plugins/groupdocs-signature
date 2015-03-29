@@ -169,7 +169,7 @@ if (!empty($_POST) && !empty($_FILES)) {
             $apiClient = new APIClient($signer);
             $api = new StorageApi($apiClient);
 
-            $result = $api->Upload($user_id, $name, 'uploaded', null, $fs);
+            $result = $api->Upload($user_id, $name, 'uploaded', null, null, $fs);
 
             $guid = $result->result->guid;
             $signature = new SignatureApi($apiClient);

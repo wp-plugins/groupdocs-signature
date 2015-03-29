@@ -26,8 +26,12 @@ class AnnotationInfo {
   static $swaggerTypes = array(
       'guid' => 'string',
       'documentGuid' => 'string',
+      'text' => 'string',
+      'layerId' => 'string',
       'sessionGuid' => 'string',
       'creatorGuid' => 'string',
+      'creatorName' => 'string',
+      'creatorEmail' => 'string',
       'box' => 'Rectangle',
       'pageNumber' => 'int',
       'annotationPosition' => 'Point',
@@ -38,6 +42,10 @@ class AnnotationInfo {
       'replies' => 'array[AnnotationReplyInfo]',
       'createdOn' => 'string',
       'fontColor' => 'int',
+      'penColor' => 'int',
+      'penWidth' => 'int',
+      'penStyle' => 'int',
+      'backgroundColor' => 'int',
       'fieldText' => 'string',
       'fontFamily' => 'string',
       'fontSize' => 'float'
@@ -46,8 +54,12 @@ class AnnotationInfo {
 
   public $guid; // string
   public $documentGuid; // string
+  public $text; // string
+  public $layerId; // string
   public $sessionGuid; // string
   public $creatorGuid; // string
+  public $creatorName; // string
+  public $creatorEmail; // string
   public $box; // Rectangle
   public $pageNumber; // int
   public $annotationPosition; // Point
@@ -58,6 +70,10 @@ class AnnotationInfo {
   public $replies; // array[AnnotationReplyInfo]
   public $createdOn; // string
   public $fontColor; // int
+  public $penColor; // int
+  public $penWidth; // int
+  public $penStyle; // int
+  public $backgroundColor; // int
   public $fieldText; // string
   public $fontFamily; // string
   public $fontSize; // float

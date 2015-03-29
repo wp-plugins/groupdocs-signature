@@ -86,6 +86,52 @@ class SystemApi {
   	  return $responseObject;
       }
   /**
+	 * SimulateAssessForPaymentPlan
+	 * Simulate Assess For Payment Plan
+   * userId, string: User GUID (required)
+   * discountCode, string: Discount Code (optional)
+   * paymentPlanId, string: Payment PlanId on the payment service (optional)
+   * @return GetInvoicesResponse
+	 */
+
+   public function SimulateAssessForPaymentPlan($userId, $discountCode=null, $paymentPlanId=null) {
+      if( $userId === null || $discountCode === null || $paymentPlanId === null ) {
+        throw new ApiException("missing required parameters", 400);
+      }
+      //parse inputs
+  	  $resourcePath = str_replace("*", "", "/system/{userId}/paymentPlans/{paymentPlanId}/discounts/{discountCode}");
+  	  $resourcePath = str_replace("{format}", "json", $resourcePath);
+  	  $method = "GET";
+      $queryParams = array();
+      $headerParams = array();
+
+      if($userId !== null) {
+  			$resourcePath = str_replace("{" . "userId" . "}",
+  			                            $userId, $resourcePath);
+  		}
+  		if($discountCode !== null) {
+  			$resourcePath = str_replace("{" . "discountCode" . "}",
+  			                            $discountCode, $resourcePath);
+  		}
+  		if($paymentPlanId !== null) {
+  			$resourcePath = str_replace("{" . "paymentPlanId" . "}",
+  			                            $paymentPlanId, $resourcePath);
+  		}
+  		//make the API Call
+      if (! isset($body)) {
+        $body = null;
+      }
+      $response = $this->apiClient->callAPI($this->basePath, $resourcePath, $method,
+  		                                      $queryParams, $body, $headerParams);
+      if(! $response){
+        return null;
+      }
+
+  	  $responseObject = $this->apiClient->deserialize($response,
+  		                                                'GetInvoicesResponse');
+  	  return $responseObject;
+      }
+  /**
 	 * GetUserPlan
 	 * Get user plan
    * callerId, string: User GUID (required)

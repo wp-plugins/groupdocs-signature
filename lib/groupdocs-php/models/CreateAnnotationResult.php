@@ -30,6 +30,7 @@ class CreateAnnotationResult {
       'documentGuid' => 'string',
       'sessionGuid' => 'string',
       'access' => 'string',
+      'type' => 'string',
       'serverTime' => 'string'
 
     );
@@ -40,6 +41,7 @@ class CreateAnnotationResult {
   public $documentGuid; // string
   public $sessionGuid; // string
   public $access; // string
+  public $type; // string
   public $serverTime; // string
   }
 

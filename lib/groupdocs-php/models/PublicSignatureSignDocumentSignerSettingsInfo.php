@@ -27,25 +27,27 @@ class PublicSignatureSignDocumentSignerSettingsInfo {
       'waterMarkText' => 'string',
       'waterMarkImage' => 'string',
       'name' => 'string',
+      'email' => 'string',
       'top' => 'float',
       'left' => 'float',
       'width' => 'float',
       'height' => 'float',
       'placeSignatureOn' => 'string',
       'data' => 'string',
-      'fields' => 'array[SignatureDocumentFieldInfo]'
+      'fields' => 'array[SignatureSignFieldSettingsInfo]'
 
     );
 
   public $waterMarkText; // string
   public $waterMarkImage; // string
   public $name; // string
+  public $email; // string
   public $top; // float
   public $left; // float
   public $width; // float
   public $height; // float
   public $placeSignatureOn; // string
   public $data; // string
-  public $fields; // array[SignatureDocumentFieldInfo]
+  public $fields; // array[SignatureSignFieldSettingsInfo]
   }
 

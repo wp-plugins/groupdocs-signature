@@ -36,7 +36,8 @@ class JobInfo {
       'scheduled_time' => 'string',
       'guid' => 'string',
       'name' => 'string',
-      'callback_url' => 'string'
+      'callback_url' => 'string',
+      'type' => 'string'
 
     );
 
@@ -53,5 +54,6 @@ class JobInfo {
   public $guid; // string
   public $name; // string
   public $callback_url; // string
+  public $type; // string
   }
 

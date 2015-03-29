@@ -33,7 +33,10 @@ class StorageProviderInfo {
       'rootFolder' => 'string',
       'isPrimary' => 'bool',
       'serviceHost' => 'string',
-      'syncOptions' => 'string'
+      'syncOptions' => 'string',
+      'altPublicKey' => 'string',
+      'altPrivateKey' => 'string',
+      'interoperable' => 'bool'
 
     );
 
@@ -47,5 +50,8 @@ class StorageProviderInfo {
   public $isPrimary; // bool
   public $serviceHost; // string
   public $syncOptions; // string
+  public $altPublicKey; // string
+  public $altPrivateKey; // string
+  public $interoperable; // bool
   }
 

@@ -39,7 +39,8 @@ class SignatureEnvelopeRecipientInfo {
       'signatureHost' => 'string',
       'signatureLocation' => 'string',
       'signatureBrowser' => 'string',
-      'embedUrl' => 'string'
+      'embedUrl' => 'string',
+      'comment' => 'string'
 
     );
 
@@ -59,5 +60,6 @@ class SignatureEnvelopeRecipientInfo {
   public $signatureLocation; // string
   public $signatureBrowser; // string
   public $embedUrl; // string
+  public $comment; // string
   }
 

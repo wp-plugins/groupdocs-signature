@@ -24,6 +24,8 @@
 class GetDocumentInfoResult {
 
   static $swaggerTypes = array(
+      'type' => 'string',
+      'url' => 'string',
       'page_count' => 'int',
       'views_count' => 'int',
       'last_view' => 'DocumentViewInfo',
@@ -32,6 +34,8 @@ class GetDocumentInfoResult {
 
     );
 
+  public $type; // string
+  public $url; // string
   public $page_count; // int
   public $views_count; // int
   public $last_view; // DocumentViewInfo

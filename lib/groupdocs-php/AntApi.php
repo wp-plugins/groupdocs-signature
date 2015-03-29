@@ -164,6 +164,47 @@ class AntApi {
   	  return $responseObject;
       }
   /**
+	 * DeleteDocumentAnnotations
+	 * Delete document annotations
+   * userId, string: User GUID (required)
+   * fileId, string: File ID (required)
+   * @return DeleteDocumentAnnotationsResponse
+	 */
+
+   public function DeleteDocumentAnnotations($userId, $fileId) {
+      if( $userId === null || $fileId === null ) {
+        throw new ApiException("missing required parameters", 400);
+      }
+      //parse inputs
+  	  $resourcePath = str_replace("*", "", "/ant/{userId}/files/{fileId}/annotations");
+  	  $resourcePath = str_replace("{format}", "json", $resourcePath);
+  	  $method = "DELETE";
+      $queryParams = array();
+      $headerParams = array();
+
+      if($userId !== null) {
+  			$resourcePath = str_replace("{" . "userId" . "}",
+  			                            $userId, $resourcePath);
+  		}
+  		if($fileId !== null) {
+  			$resourcePath = str_replace("{" . "fileId" . "}",
+  			                            $fileId, $resourcePath);
+  		}
+  		//make the API Call
+      if (! isset($body)) {
+        $body = null;
+      }
+      $response = $this->apiClient->callAPI($this->basePath, $resourcePath, $method,
+  		                                      $queryParams, $body, $headerParams);
+      if(! $response){
+        return null;
+      }
+
+  	  $responseObject = $this->apiClient->deserialize($response,
+  		                                                'DeleteDocumentAnnotationsResponse');
+  	  return $responseObject;
+      }
+  /**
 	 * CreateAnnotationReply
 	 * Create annotation reply
    * userId, string: User GUID (required)
@@ -801,12 +842,11 @@ class AntApi {
 	 * Get Shared Link Access Rights
    * userId, string: User GUID (required)
    * fileId, string: File ID (required)
-   * body, AnnotationReviewerRights: Access Rights for the collaborate link (required)
    * @return GetSharedLinkAccessRightsResponse
 	 */
 
-   public function GetSharedLinkAccessRights($userId, $fileId, $body) {
-      if( $userId === null || $fileId === null || $body === null ) {
+   public function GetSharedLinkAccessRights($userId, $fileId) {
+      if( $userId === null || $fileId === null ) {
         throw new ApiException("missing required parameters", 400);
       }
       //parse inputs
@@ -843,7 +883,7 @@ class AntApi {
 	 * Set Shared Link Access Rights
    * userId, string: User GUID (required)
    * fileId, string: File ID (required)
-   * body, AnnotationReviewerRights: Access Rights for the collaborate link (required)
+   * body, string: Access Rights for the collaborate link (required)
    * @return SetSharedLinkAccessRightsResponse
 	 */
 

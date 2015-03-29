@@ -38,6 +38,7 @@ class ViewDocumentResult {
       'lic' => 'bool',
       'pdfPrintUrl' => 'string',
       'htmlPrintUrl' => 'string',
+      'documentDescription' => 'string',
       'id' => 'float',
       'guid' => 'string'
 
@@ -57,6 +58,7 @@ class ViewDocumentResult {
   public $lic; // bool
   public $pdfPrintUrl; // string
   public $htmlPrintUrl; // string
+  public $documentDescription; // string
   public $id; // float
   public $guid; // string
   }

@@ -27,6 +27,7 @@ class AnnotationReplyInfo {
       'guid' => 'string',
       'userGuid' => 'string',
       'userName' => 'string',
+      'userEmail' => 'string',
       'text' => 'string',
       'repliedOn' => 'string',
       'parentReplyGuid' => 'string',
@@ -37,6 +38,7 @@ class AnnotationReplyInfo {
   public $guid; // string
   public $userGuid; // string
   public $userName; // string
+  public $userEmail; // string
   public $text; // string
   public $repliedOn; // string
   public $parentReplyGuid; // string

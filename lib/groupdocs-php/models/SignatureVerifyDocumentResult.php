@@ -27,13 +27,13 @@ class SignatureVerifyDocumentResult {
       'authentic' => 'bool',
       'datesSigned' => 'array[string]',
       'references' => 'array[string]',
-      'recipients' => 'array[SignatureEnvelopeRecipientInfo]'
+      'recipients' => 'array[SignatureSignerInfo]'
 
     );
 
   public $authentic; // bool
   public $datesSigned; // array[string]
   public $references; // array[string]
-  public $recipients; // array[SignatureEnvelopeRecipientInfo]
+  public $recipients; // array[SignatureSignerInfo]
   }
 

@@ -64,6 +64,12 @@ class UserInfo {
       'is_polyline_annotation_button_enabled' => 'bool',
       'is_typewriter_annotation_button_enabled' => 'bool',
       'is_watermark_annotation_button_enabled' => 'bool',
+      'is_text_replacement_annotation_button_enabled' => 'bool',
+      'is_arrow_annotation_button_enabled' => 'bool',
+      'is_text_redaction_annotation_button_enabled' => 'bool',
+      'is_resource_redaction_annotation_button_enabled' => 'bool',
+      'is_text_underline_annotation_button_enabled' => 'bool',
+      'is_distance_annotation_button_enabled' => 'bool',
       'is_annotation_document_name_shown' => 'bool',
       'annotation_navigation_icons' => 'array[int]',
       'annotation_tool_icons' => 'array[int]',
@@ -87,6 +93,34 @@ class UserInfo {
       'webhook_notification_failed_recipients' => 'string',
       'signature_color' => 'string',
       'signature_save_field_changes_automatically' => 'bool',
+      'signature_use_custom_email_templates' => 'bool',
+      'signature_envelope_sent_owner_template' => 'string',
+      'signature_envelope_sent_other_template' => 'string',
+      'signature_envelope_completed_template' => 'string',
+      'signature_envelope_signed_template' => 'string',
+      'signature_envelope_declined_template' => 'string',
+      'signature_envelope_failed_template' => 'string',
+      'signature_envelope_cancelled_template' => 'string',
+      'signature_envelope_expired_template' => 'string',
+      'signature_envelope_step_expired_template' => 'string',
+      'signature_envelope_recipient_reminder_template' => 'string',
+      'signature_form_signed_template' => 'string',
+      'signature_form_require_user_auth_for_sign' => 'bool',
+      'signature_form_request_user_auth_by_photo' => 'bool',
+      'signature_form_require_user_identity_validation' => 'bool',
+      'signature_envelope_require_user_auth_for_sign' => 'bool',
+      'signature_envelope_request_user_auth_by_photo' => 'bool',
+      'signature_enable_uploaded_signature' => 'bool',
+      'signature_enable_typed_signature' => 'bool',
+      'signature_enable_envelope_comment' => 'bool',
+      'signature_enable_form_comment' => 'bool',
+      'can_participan_download_form' => 'bool',
+      'can_participant_print_form' => 'bool',
+      'notify_form_owner_on_sign' => 'bool',
+      'attach_signed_form_document' => 'bool',
+      'show_participant_comment_in_signed_document' => 'bool',
+      'forms_notify_other_on_sign' => 'string',
+      'form_document_parse_fields' => 'bool',
       'id' => 'string',
       'guid' => 'string',
       'primary_email' => 'string'
@@ -133,6 +167,12 @@ class UserInfo {
   public $is_polyline_annotation_button_enabled; // bool
   public $is_typewriter_annotation_button_enabled; // bool
   public $is_watermark_annotation_button_enabled; // bool
+  public $is_text_replacement_annotation_button_enabled; // bool
+  public $is_arrow_annotation_button_enabled; // bool
+  public $is_text_redaction_annotation_button_enabled; // bool
+  public $is_resource_redaction_annotation_button_enabled; // bool
+  public $is_text_underline_annotation_button_enabled; // bool
+  public $is_distance_annotation_button_enabled; // bool
   public $is_annotation_document_name_shown; // bool
   public $annotation_navigation_icons; // array[int]
   public $annotation_tool_icons; // array[int]
@@ -156,6 +196,34 @@ class UserInfo {
   public $webhook_notification_failed_recipients; // string
   public $signature_color; // string
   public $signature_save_field_changes_automatically; // bool
+  public $signature_use_custom_email_templates; // bool
+  public $signature_envelope_sent_owner_template; // string
+  public $signature_envelope_sent_other_template; // string
+  public $signature_envelope_completed_template; // string
+  public $signature_envelope_signed_template; // string
+  public $signature_envelope_declined_template; // string
+  public $signature_envelope_failed_template; // string
+  public $signature_envelope_cancelled_template; // string
+  public $signature_envelope_expired_template; // string
+  public $signature_envelope_step_expired_template; // string
+  public $signature_envelope_recipient_reminder_template; // string
+  public $signature_form_signed_template; // string
+  public $signature_form_require_user_auth_for_sign; // bool
+  public $signature_form_request_user_auth_by_photo; // bool
+  public $signature_form_require_user_identity_validation; // bool
+  public $signature_envelope_require_user_auth_for_sign; // bool
+  public $signature_envelope_request_user_auth_by_photo; // bool
+  public $signature_enable_uploaded_signature; // bool
+  public $signature_enable_typed_signature; // bool
+  public $signature_enable_envelope_comment; // bool
+  public $signature_enable_form_comment; // bool
+  public $can_participan_download_form; // bool
+  public $can_participant_print_form; // bool
+  public $notify_form_owner_on_sign; // bool
+  public $attach_signed_form_document; // bool
+  public $show_participant_comment_in_signed_document; // bool
+  public $forms_notify_other_on_sign; // string
+  public $form_document_parse_fields; // bool
   public $id; // string
   public $guid; // string
   public $primary_email; // string
